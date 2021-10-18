@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ServicesGrid from '../ServicesGrid/ServicesGrid';
+import { ProductContext } from './../../contexts/ProductProvider';
 
 
 
 const ServicesTab = () => {
+
+    const { products } = useContext(ProductContext)
+
+    const orthoProducts = products.filter((product) => product.type === 'Orthopedic')
+    const PathoProducts = products.filter((product) => product.type === 'pathology')
+
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -35,7 +42,7 @@ const ServicesTab = () => {
             >
                 {value === index && (
                     <Box sx={{ p: 3 }}>
-                        <Typography>{children}</Typography>
+                        <Typography component="div">{children}</Typography>
                     </Box>
                 )}
             </div>
@@ -58,19 +65,16 @@ const ServicesTab = () => {
                 borderColor: 'primary.main'
             }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                    <Tab label="Item One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label="Orthopedics" {...a11yProps(0)} />
+                    <Tab label="Pathological" {...a11yProps(1)} />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                <ServicesGrid></ServicesGrid>
+                <ServicesGrid product={orthoProducts}></ServicesGrid>
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <ServicesGrid></ServicesGrid>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <ServicesGrid></ServicesGrid>
+                <ServicesGrid product={PathoProducts}></ServicesGrid>
+
             </TabPanel>
 
 

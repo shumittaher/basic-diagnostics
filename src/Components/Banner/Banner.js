@@ -10,6 +10,7 @@ const Banner = () => {
 
     const [picture, setPicture] = useState(1)
 
+
     useEffect(() => {
         setTimeout(() => { (picture < 3) ? setPicture(picture + 1) : setPicture(1) }, 3000)
     }, [picture])
@@ -20,7 +21,7 @@ const Banner = () => {
 
     const imageStyle = {
 
-        width: '100%',
+        width: '80%',
         height: 550,
         objectFit: 'cover'
 
