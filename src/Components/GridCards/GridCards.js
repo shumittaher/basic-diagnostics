@@ -32,19 +32,19 @@ const GridCards = ({ item }) => {
                 }}>
                     <Card sx={{ minWidth: 275, height: 550, }}>
                         <CardContent>
-                            <img style={{ objectFit: 'cover', width: '100%', height: '250px', marginBottom: '1.5em' }} src={imageURL} alt="" />
+                            <img style={{ objectFit: 'cover', width: '100%', height: '250px', marginBottom: '1.5em', borderRadius:'5px' }} src={imageURL} alt="" />
 
                             <Typography variant="h5" component="div">
                                 {serviceName}
                             </Typography>
-                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                            </Typography>
+                        
                             <Typography variant="body2">
                                 {description}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Link style={{ textDecoration: 'none', color: "inherit" }} to={`/tests/${id}`}> <Button size="small"> Learn More  </Button></Link>
+
+                        <CardActions sx={{ display: 'flex',   justifyContent: 'center'}}>
+                            <Link style={{ textDecoration: 'none', color: "inherit", }} to={`/tests/${id}`}> <Button size="large" variant="outlined"> Learn More  </Button></Link>
                         </CardActions>
                     </Card>
                 </Item>
