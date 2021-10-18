@@ -5,6 +5,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
 import ProductProvider from './contexts/ProductProvider';
+import DetailCard from './Components/DetailCard/DetailCard';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
               <Route exact path="/login">
                 <Login></Login>
+              </Route>
+
+              <Route exact path="/tests/:testId">
+                <DetailCard></DetailCard>
               </Route>
 
             </Switch>

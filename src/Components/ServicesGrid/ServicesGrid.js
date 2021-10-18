@@ -21,7 +21,7 @@ const ServicesGrid = ({ product }) => {
 
 
                 {
-                    product.map((item) => <GridCards item={item}></GridCards>)
+                    product.map((item) => <GridCards item={item} key = {item.id}></GridCards>)
                 }
 
 

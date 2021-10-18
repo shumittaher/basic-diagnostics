@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 
 const GridCards = ({ item }) => {
@@ -29,7 +30,7 @@ const GridCards = ({ item }) => {
                 <Item sx={{
                     height: '100%',
                 }}>
-                    <Card sx={{ minWidth: 275, height: 575, }}>
+                    <Card sx={{ minWidth: 275, height: 550, }}>
                         <CardContent>
                             <img style={{ objectFit: 'cover', width: '100%', height: '250px', marginBottom: '1.5em' }} src={imageURL} alt="" />
 
@@ -37,14 +38,13 @@ const GridCards = ({ item }) => {
                                 {serviceName}
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                adjective
                             </Typography>
                             <Typography variant="body2">
                                 {description}
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">Learn More</Button>
+                            <Link style={{ textDecoration: 'none', color: "inherit" }} to={`/tests/${id}`}> <Button size="small"> Learn More  </Button></Link>
                         </CardActions>
                     </Card>
                 </Item>
