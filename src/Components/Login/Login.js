@@ -1,19 +1,25 @@
 import React from 'react'
 import useAuth from './../../hooks/useAuth';
-import { Button, Input, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { Button, Input, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Typography, Icon } from '@mui/material';
 import { Box } from '@mui/system';
 import { useForm } from "react-hook-form";
+import { useHistory, useLocation } from 'react-router';
 
 
 const Login = () => {
 
     const [showLoginType, setShowLoginType] = React.useState('create');
 
+    const location = useLocation()
+    const history = useHistory()
+    const redirect_url = location.state?.from || '/'
+
     const handleRadioToggle = (event) => {
         setShowLoginType(event.target.value);
     };
 
-    const { signInWithGoogle, setUser, setError, setIsLoading, createUserEmailAndPassword, signInEmailAndPassword } = useAuth()
+    const { user, signInWithGoogle, setUser, setError, setIsLoading, createUserEmailAndPassword, signInEmailAndPassword, logOut } = useAuth()
+
     const { register, handleSubmit } = useForm();
 
     const handleSignInWithGoogle = () => {
@@ -23,7 +29,7 @@ const Login = () => {
             setError(error.message);
         }).finally(() => {
             setIsLoading(false)
-            // history.push(redirect_url)
+            history.push(redirect_url)
         });
     }
 
@@ -37,7 +43,7 @@ const Login = () => {
                 setError(error.message);
             }).finally(() => {
                 setIsLoading(false)
-                // history.push(redirect_url)
+                history.push(redirect_url)
             });
     }
 
@@ -51,7 +57,7 @@ const Login = () => {
                 setError(error.message);
             }).finally(() => {
                 setIsLoading(false)
-                // history.push(redirect_url)
+                history.push(redirect_url)
             });
     }
 
@@ -100,55 +106,78 @@ const Login = () => {
 
     }
 
-    return (
-        <Box sx={{mt:5}}>
-            <Box sx={{
-                justifyContent: 'center',
-                display: 'flex',
-                alignItems: 'center',
-                flexDirection: {
-                    xs: 'column',
-                    sm: 'row',
-                }
-            }}>
+
+    const newLogin = () => {
+
+        return (
+            <Box sx={{ mt: 5 }}>
                 <Box sx={{
                     justifyContent: 'center',
                     display: 'flex',
-                    width: 400,
                     alignItems: 'center',
+                    flexDirection: {
+                        xs: 'column',
+                        sm: 'row',
+                    }
                 }}>
-                    <Button onClick={handleSignInWithGoogle}
-                        variant="contained">Google Sign In</Button>
-                </Box>
+                    <Box sx={{
+                        justifyContent: 'center',
+                        display: 'flex',
+                        width: 400,
+                        alignItems: 'center',
+                    }}>
+                        <Button onClick={handleSignInWithGoogle}
+                            variant="contained">Google Sign In</Button>
+                    </Box>
 
-                <Box sx={{ my: 5 }}><h1>OR</h1></Box>
-                <Box sx={{
-                    justifyContent: 'center',
-                    display: 'flex',
-                    width: 400,
-                }}>
-                    <div>
+                    <Box sx={{ my: 5 }}><h1>OR</h1></Box>
+                    <Box sx={{
+                        justifyContent: 'center',
+                        display: 'flex',
+                        width: 400,
+                    }}>
                         <div>
-                            <FormControl component="fieldset">
-                                <FormLabel component="legend">Email / Password</FormLabel>
-                                <RadioGroup row
-                                    value={showLoginType}
-                                    onChange={handleRadioToggle}
-                                >
-                                    <FormControlLabel value="create" control={<Radio />} label="Create New" />
-                                    <FormControlLabel value="login" control={<Radio />} label="Log In" />
-                                </RadioGroup>
-                            </FormControl>
+                            <div>
+                                <FormControl component="fieldset">
+                                    <FormLabel component="legend">Email / Password</FormLabel>
+                                    <RadioGroup row
+                                        value={showLoginType}
+                                        onChange={handleRadioToggle}
+                                    >
+                                        <FormControlLabel value="create" control={<Radio />} label="Create New" />
+                                        <FormControlLabel value="login" control={<Radio />} label="Log In" />
+                                    </RadioGroup>
+                                </FormControl>
 
-                            {showLoginOptions()}
+                                {showLoginOptions()}
 
+                            </div>
                         </div>
-                    </div>
+                    </Box>
+
                 </Box>
 
-            </Box>
+            </Box >
 
-        </Box >
+        )
+    }
+    const handleSignOut = () => {
+        logOut()
+    }
+
+    const alreadyLogedIn = () => {
+        return (<Box sx={{ mt: 5 }}>
+            <Typography variant="h3" component="div"> You Are Already Logged In </Typography>
+            <Button sx={{ mt: 5 }} onClick={handleSignOut} variant="contained" size="large">Log out ? <Icon style={{ cursor: 'pointer', marginLeft: '3px' }} baseClassName="fas" className="fa-sign-out-alt" /> </Button>
+        </Box>)
+    }
+
+    const finalReturn = () => {
+        return user.email ? alreadyLogedIn() : newLogin()
+    }
+
+    return (
+        finalReturn()
     )
 }
 

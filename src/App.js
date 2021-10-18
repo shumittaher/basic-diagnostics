@@ -6,6 +6,7 @@ import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
 import ProductProvider from './contexts/ProductProvider';
 import DetailCard from './Components/DetailCard/DetailCard';
+import Privateroute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,17 +21,17 @@ function App() {
                 <Home></Home>
               </Route>
 
-              <Route exact path="/home">
+              <Route path="/home">
                 <Home></Home>
               </Route>
 
-              <Route exact path="/login">
+              <Route path="/login">
                 <Login></Login>
               </Route>
 
-              <Route exact path="/tests/:testId">
+              <Privateroute path="/tests/:testId">
                 <DetailCard></DetailCard>
-              </Route>
+              </Privateroute>
 
             </Switch>
           </BrowserRouter>
