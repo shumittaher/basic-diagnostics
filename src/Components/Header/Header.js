@@ -40,9 +40,21 @@ const Header = () => {
 
                     <Typography variant="h6" component="div"
                         sx={menuTextStyle}>
-                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/login">Log In</Link>
+                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/services">Services</Link>
                     </Typography>
 
+
+                    <Typography variant="h6" component="div"
+                        sx={menuTextStyle}>
+                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/docs">Doctors</Link>
+                    </Typography>
+
+                    <Typography variant="h6" component="div"
+                        sx={menuTextStyle}>
+                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/about">About </Link>
+                    </Typography>
+
+        
 
                     <Typography variant="h6" component="div"
                         sx={{
@@ -51,6 +63,13 @@ const Header = () => {
                             justifyContent: 'flex-end',
                             alignItems: 'center',
                         }}>
+
+                        <Typography variant="h6" component="div"
+                            sx={menuTextStyle}>
+                            <Link style={{ textDecoration: 'none', color: "inherit" }} to="/login">Log In</Link>
+                        </Typography>
+
+
                         <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>{user.email ? <small style={{ marginRight: '10px' }}>Logged in as: {user.email}</small> : <small style={{ marginRight: '10px' }}>Logged Out</small>}</Box>
 
                         <Icon style={{ cursor: 'pointer' }} onClick={handleSignOut} baseClassName="fas" className="fa-sign-out-alt" />

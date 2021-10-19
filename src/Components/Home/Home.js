@@ -1,6 +1,7 @@
 import { Box } from '@mui/system'
 import React from 'react'
 import Banner from '../Banner/Banner'
+import DoctorsBig from '../DoctorsBig/DoctorsBig'
 import ServicesTab from '../ServicesTab/ServicesTab'
 
 const Home = () => {
@@ -15,6 +16,8 @@ const Home = () => {
             <Box>
                 <ServicesTab></ServicesTab>
             </Box>
+
+            <DoctorsBig></DoctorsBig>
 
         </div>
     )

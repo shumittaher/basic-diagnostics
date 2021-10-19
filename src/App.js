@@ -7,6 +7,8 @@ import Header from './Components/Header/Header';
 import ProductProvider from './contexts/ProductProvider';
 import DetailCard from './Components/DetailCard/DetailCard';
 import Privateroute from './Components/PrivateRoute/PrivateRoute';
+import ServicesBig from './Components/ServicesBig/ServicesBig';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -29,11 +31,16 @@ function App() {
                 <Login></Login>
               </Route>
 
+              <Route path="/services">
+                <ServicesBig></ServicesBig>
+              </Route>
+
+
               <Privateroute path="/tests/:testId">
                 <DetailCard></DetailCard>
               </Privateroute>
-
             </Switch>
+            <Footer></Footer>
           </BrowserRouter>
         </AuthProvider>
       </ProductProvider>
