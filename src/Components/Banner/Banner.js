@@ -16,13 +16,13 @@ const Banner = () => {
     }, [picture])
 
     const imageBoxStyle = {
-        height: '100%'
+        height: {xs: 300, sm:600},
     }
 
     const imageStyle = {
 
         width: '100%',
-        height: 600,
+        height: '100%',
         objectFit: 'cover'
 
     }
@@ -42,13 +42,14 @@ const Banner = () => {
 
             case 1:
                 {
-                    return <Box sx={imageBoxStyle}>
+                    return <Box>
+                        <Box sx={imageBoxStyle}>
 
-                        <img style={imageStyle}
-                            src={bannerImg1}
-                            alt="First Slide"
-                        />
-
+                            <img style={imageStyle}
+                                src={bannerImg1}
+                                alt="First Slide"
+                            />
+                        </Box>
                         <Box component="div" sx={textBoxStyle}                 >
                             <Typography variant="h5" sx={typographyStyle}>Best Xray Service</Typography>
                             <Typography sx={typographyStyle}>We Provide the Best Xray Service. Fast Delivery. Our trained radioLogists will never miss a thing</Typography>
@@ -58,12 +59,15 @@ const Banner = () => {
 
             case 2:
                 {
-                    return <Box sx={imageBoxStyle}>
-                        <img
-                            style={imageStyle}
-                            src={bannerImg2}
-                            alt="Second slide"
-                        />
+                    return <Box>
+                        <Box sx={imageBoxStyle}>
+                            <img
+                                style={imageStyle}
+                                src={bannerImg2}
+                                alt="Second slide"
+                            />
+                        </Box>
+
                         <Box component="div" sx={textBoxStyle}                          >
 
                             <Typography variant="h5" sx={typographyStyle}>Best Blood Tests</Typography>
@@ -74,12 +78,15 @@ const Banner = () => {
 
             case 3:
                 {
-                    return <Box sx={imageBoxStyle}>
-                        <img
-                            style={imageStyle}
-                            src={bannerImg3}
-                            alt="Third slide"
-                        />
+                    return <Box>
+                        <Box sx={imageBoxStyle}>
+                            <img
+                                style={imageStyle}
+                                src={bannerImg3}
+                                alt="Third slide"
+                            />
+                        </Box>
+
                         <Box component="div" sx={textBoxStyle}>
 
                             <Typography variant="h5" sx={typographyStyle}>Full Body Checkups</Typography>
