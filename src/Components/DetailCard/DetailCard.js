@@ -36,7 +36,7 @@ const DetailCard = () => {
             <Item sx={{
                 height: '100%',
                 mx: 'auto',
-                mt: 5,
+                my: 5,
                 maxWidth: 'sm',
 
             }}>

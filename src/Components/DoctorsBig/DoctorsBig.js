@@ -22,6 +22,7 @@ const DoctorsBig = () => {
                     <img style={{ borderRadius: "10px", objectFit: 'cover', width: '100%', }} src={imageURL} alt="" />
 
                     <Box sx={{
+                         position: 'relative' , bottom: 10,
                         backgroundColor: 'whitesmoke',
                         display:  'flex',
                         flexWrap: 'wrap',

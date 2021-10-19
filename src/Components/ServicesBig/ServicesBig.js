@@ -15,6 +15,7 @@ const ServicesBig = () => {
         <Box sx={{
             justifyContent: 'center',
             display: 'flex',
+            my: 5
         }}>
             <Grid sx={{
                 maxWidth: 'lg',
