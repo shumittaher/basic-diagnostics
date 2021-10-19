@@ -3,6 +3,7 @@ import React from 'react'
 import Banner from '../Banner/Banner'
 import DoctorsBig from '../DoctorsBig/DoctorsBig'
 import ServicesTab from '../ServicesTab/ServicesTab'
+import FAQ from './../FAQ/FAQ';
 
 const Home = () => {
 
@@ -18,6 +19,8 @@ const Home = () => {
             </Box>
 
             <DoctorsBig></DoctorsBig>
+
+            <FAQ></FAQ>
 
         </div>
     )
