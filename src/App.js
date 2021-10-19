@@ -11,6 +11,7 @@ import ServicesBig from './Components/ServicesBig/ServicesBig';
 import Footer from './Components/Footer/Footer';
 import Doctors from './Components/Doctors/Doctors';
 import Testimonials from './Components/Tesimonials/Testimonials';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -49,6 +50,11 @@ function App() {
               <Privateroute path="/tests/:testId">
                 <DetailCard></DetailCard>
               </Privateroute>
+
+              <Route path="*">
+                <NotFound></NotFound>
+              </Route>
+
             </Switch>
             
             <Footer></Footer>
