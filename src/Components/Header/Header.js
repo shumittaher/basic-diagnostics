@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import useAuth from './../../hooks/useAuth';
 import Icon from '@mui/material/Icon';
 
