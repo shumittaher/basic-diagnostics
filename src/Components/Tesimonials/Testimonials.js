@@ -11,8 +11,8 @@ const Testimonials = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-
-                mt: 10, mb:5
+                mx: 2,
+                mt: 10, mb: 5
 
             }}>
                 <Typography variant='h6' sx={{ lineHeight: 1 }} color='#33c9dc'>Testimonials</Typography>
@@ -20,9 +20,9 @@ const Testimonials = () => {
                 </Typography>
             </Box>
 
-            <Grid container spacing={2} sx={{ mb: 15, px: 6}}>
+            <Grid container spacing={2} sx={{ mb: 15, px: 6 }}>
                 <Grid item xs={12} md={6} sx={{
-                    height: '100%', display: 'flex', justifyContent: 'center', 
+                    height: '100%', display: 'flex', justifyContent: 'center',
                 }}>
 
                     <Card sx={{ backgroundColor: 'whitesmoke', p: 2 }}>
@@ -53,7 +53,7 @@ const Testimonials = () => {
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={6} sx={{
-                    height: '100%', display: 'flex', justifyContent: 'center', 
+                    height: '100%', display: 'flex', justifyContent: 'center',
                 }}>
 
                     <Card sx={{ backgroundColor: 'whitesmoke', p: 2 }}>
@@ -84,7 +84,7 @@ const Testimonials = () => {
                     </Card>
                 </Grid>
 
-          
+
             </Grid>
 
 
