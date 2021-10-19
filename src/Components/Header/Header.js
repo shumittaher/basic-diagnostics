@@ -42,8 +42,10 @@ const Header = () => {
                             sm: 'row'
                         },
                         ml: 3,
-                        py:2
+                        // py: 2
                     }}>
+
+                        <img style={{ marginRight: '40px'}} src="/images/logo/logo.png" alt=""/>
 
 
                         <Typography variant="h6" component="div"
@@ -76,7 +78,11 @@ const Header = () => {
                             justifyContent: 'flex-end',
                             alignItems: 'center',
                             mr: 3,
-                            py: 2
+                            py: 2,
+                            flexDirection: {
+                                xs: 'column',
+                                sm: 'row'
+                            },
                         }}>
 
                         <Typography variant="h6" component="div"
