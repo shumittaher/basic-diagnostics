@@ -8,6 +8,10 @@ const Footer = () => {
             <Box sx={{
                 backgroundColor: '#1a237e                ',
                 display: 'flex',
+                flexDirection:{
+                    xs:'column',
+                    sm: 'row'
+                },
                 flexWrap: 'wrap',
                 width: '100%',
 
@@ -16,7 +20,7 @@ const Footer = () => {
                 alignItems: 'center',
 
             }}>
-                <Box sx={{ textAlign: 'left', width: '500px' }}>
+                <Box sx={{ textAlign: 'left', width: '400px' , mb:5}}>
                     <Typography sx={{ fontWeight: 'Bold', my: 2 }} variant='h3' color='#33c9dc'>
                         About us
                     </Typography>
@@ -27,7 +31,7 @@ const Footer = () => {
                 </Box>
 
 
-                <Box sx={{ borderLeft: 2, borderTop: 0, borderBottom: 0, borderRight: 0, py: 5, borderStyle: 'dotted', borderColor: '#C0C0C0' }} />
+                <Box sx={{ borderLeft: 2, borderTop: 0, borderBottom: 0, borderRight: 0, py: 5, borderStyle: 'dotted', borderColor: '#C0C0C0', display:{xs:'none', sm:'inline'} }} />
 
                 <Box sx={{textAlign: 'right'}}>
 

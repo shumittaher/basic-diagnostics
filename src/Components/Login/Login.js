@@ -110,7 +110,7 @@ const Login = () => {
     const newLogin = () => {
 
         return (
-            <Box sx={{ mt: 5 }}>
+            <Box sx={{ mt: 5, mb: 15 }}>
                 <Box sx={{
                     justifyContent: 'center',
                     display: 'flex',
@@ -166,9 +166,9 @@ const Login = () => {
     }
 
     const alreadyLogedIn = () => {
-        return (<Box sx={{ mt: 5 }}>
+        return (<Box sx={{ mt: 15, mb: 15 }}>
             <Typography variant="h3" component="div"> You Are Already Logged In </Typography>
-            <Button sx={{ mt: 5 }} onClick={handleSignOut} variant="contained" size="large">Log out ? <Icon style={{ cursor: 'pointer', marginLeft: '3px' }} baseClassName="fas" className="fa-sign-out-alt" /> </Button>
+            <Button sx={{ mt: 5, mb: 15 }} onClick={handleSignOut} variant="contained" size="large">Log out ? <Icon style={{ cursor: 'pointer', marginLeft: '3px' }} baseClassName="fas" className="fa-sign-out-alt" /> </Button>
         </Box>)
     }
 

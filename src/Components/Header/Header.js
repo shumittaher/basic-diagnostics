@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,67 +18,87 @@ const Header = () => {
 
     const menuTextStyle = {
         px: 2,
-        width: 100
+        width: 100,
+        textAlign: 'left'
     }
 
     return (
         <div>
 
-            <AppBar sx={{
-            }} position="static">
-                <Toolbar variant="dense">
-                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                        <MenuIcon />
-                    </IconButton>
+            <Box sx={{}}>
 
-                    <Typography variant="h6" component="div"
-                        sx={menuTextStyle}>
-                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/home">Home</Link>
-                    </Typography>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    backgroundColor: '#1a237e',
+                    flexWrap: 'wrap'
+                }} >
 
-                    <Typography variant="h6" component="div"
-                        sx={menuTextStyle}>
-                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/services">Services</Link>
-                    </Typography>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        alignItems: 'center',
+                        flexDirection: {
+                            xs: 'column',
+                            sm: 'row'
+                        },
+                        ml: 3,
+                        py:2
+                    }}>
 
 
-                    <Typography variant="h6" component="div"
-                        sx={menuTextStyle}>
-                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/docs">Doctors</Link>
-                    </Typography>
+                        <Typography variant="h6" component="div"
+                            sx={menuTextStyle}>
+                            <Link style={{ textDecoration: 'none', color: "white" }} to="/home">Home</Link>
+                        </Typography>
 
-                    <Typography variant="h6" component="div"
-                        sx={menuTextStyle}>
-                        <Link style={{ textDecoration: 'none', color: "inherit" }} to="/about">About </Link>
-                    </Typography>
+                        <Typography variant="h6" component="div"
+                            sx={menuTextStyle}>
+                            <Link style={{ textDecoration: 'none', color: "white" }} to="/services">Services</Link>
+                        </Typography>
 
-        
 
-                    <Typography variant="h6" component="div"
+                        <Typography variant="h6" component="div"
+                            sx={menuTextStyle}>
+                            <Link style={{ textDecoration: 'none', color: "white" }} to="/docs">Doctors</Link>
+                        </Typography>
+
+                        <Typography variant="h6" component="div"
+                            sx={menuTextStyle}>
+                            <Link style={{ textDecoration: 'none', color: "white" }} to="/about">About </Link>
+                        </Typography>
+
+                    </Box>
+
+                    <Box
+
                         sx={{
                             display: 'flex',
-                            width: '80%',
                             justifyContent: 'flex-end',
                             alignItems: 'center',
+                            mr: 3,
+                            py: 2
                         }}>
 
                         <Typography variant="h6" component="div"
                             sx={menuTextStyle}>
-                            <Link style={{ textDecoration: 'none', color: "inherit" }} to="/login">Log In</Link>
+                            <Link style={{ textDecoration: 'none', color: "white" }} to="/login">Log In</Link>
                         </Typography>
 
 
-                        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>{user.email ? <small style={{ marginRight: '10px' }}>Logged in as: {user.email}</small> : <small style={{ marginRight: '10px' }}>Logged Out</small>}</Box>
+                        <Box sx={{ display: { xs: 'none', sm: 'flex' }, color: "white" }}>{user.email ? <small style={{ marginRight: '10px' }}>Logged in as: {user.email}</small> : <small style={{ marginRight: '10px' }}>Logged Out</small>}</Box>
 
-                        <Icon style={{ cursor: 'pointer' }} onClick={handleSignOut} baseClassName="fas" className="fa-sign-out-alt" />
-                    </Typography>
+                        <Icon style={{ cursor: 'pointer', color: "white" }} onClick={handleSignOut} baseClassName="fas" className="fa-sign-out-alt" />
 
-
-                </Toolbar>
-            </AppBar>
+                    </Box>
 
 
-        </div>
+
+                </Box>
+
+            </Box>
+        </div >
     )
 }
 
